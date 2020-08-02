@@ -1,0 +1,37 @@
+{
+  "name": "@teleology/slim",
+  "version": "1.1.0",
+  "description": "A tiny javascript template library",
+  "repository": "https://github.com/icarus-sullivan/teleology_slim.git",
+  "main": "lib/index.js",
+  "files": [
+    "lib/*"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "sample": "node sample/index.js",
+    "prepare": "npx babel src --out-dir lib"
+  },
+  "keywords": [
+    "template",
+    "js",
+    "slim",
+    "tiny"
+  ],
+  "author": "Chris Sullivan",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-teleology": "1.0.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5"
+  }
+}
