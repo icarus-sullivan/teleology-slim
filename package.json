@@ -1,16 +1,19 @@
 {
   "name": "@teleology/slim",
-  "version": "1.1.0",
+  "version": "2.0.1",
   "description": "A tiny javascript template library",
-  "repository": "https://github.com/icarus-sullivan/teleology_slim.git",
+  "repository": "https://github.com/icarus-sullivan/teleology-slim.git",
   "main": "lib/index.js",
+  "bin": {
+    "slim": "lib/cli.js"
+  },
   "files": [
     "lib/*"
   ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "sample": "node sample/index.js",
+    "sample": "export PARTNER_COMPANY='Fictional Company' && node sample/index.js",
     "prepare": "npx babel src --out-dir lib"
   },
   "keywords": [

@@ -7,11 +7,12 @@ const OUTPUT_FILE = path.resolve(__dirname, 'output.txt');
 
 const template = fs.readFileSync(ENTRY_FILE, 'utf8');
 
-const output = slim(template, {
+const output = slim.latest(template, {
   user: {
     name: 'Bill & Ted',
     lastVisited: Date.now(),
   },
+  location: 'CORPORATE_HOTEL',
   formatDate: (d) => new Date(d).toLocaleTimeString(),
   survey: [
     'How was your stay?',

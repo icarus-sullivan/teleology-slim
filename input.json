@@ -1,0 +1,12 @@
+{
+  "user": {
+    "name": "Captain Kirk",
+    "lastVisited": "11:04:55 PM"
+  },
+  "location": "Best Western",
+  
+  "survey": [
+    "How was your stay?",
+    "If you could improve one thing, what would it be?"
+  ]
+}
