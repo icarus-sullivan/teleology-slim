@@ -1,8 +1,15 @@
 {
   "name": "@teleology/slim",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A tiny javascript template library",
-  "repository": "https://github.com/icarus-sullivan/teleology-slim.git",
+  "homepage": "https://github.com/teleology-io/teleology-slim#readme",
+  "bugs": {
+    "url": "https://github.com/teleology-io/teleology-slim/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teleology-io/teleology-slim.git"
+  },
   "main": "lib/index.js",
   "bin": {
     "slim": "lib/cli.js"
