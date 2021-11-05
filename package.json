@@ -20,6 +20,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "test": "echo \"NOT YET IMPLEMENTED\"",
     "sample": "export PARTNER_COMPANY='Fictional Company' && node sample/index.js",
     "prepare": "npx babel src --out-dir lib"
   },
