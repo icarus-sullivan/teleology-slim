@@ -2,7 +2,9 @@
 const compile = (cmd) =>
   new Function(`with(this) {
   try {
-    return ${cmd} || '';
+    const result = ${cmd};
+    if (typeof result === 'number') return result;
+    return result || '';
   } catch (e) {
     return '';
   }
@@ -11,10 +13,11 @@ const compile = (cmd) =>
 module.exports = {
   regex: /{{.*?}}/g,
   resolver: ({ match, context }) => {
-    const directive = match.slice(2, -2).trim();
-    const value = context[match];
+    const key = match.slice(2, -2).trim();
+    const value = context[key];
+    if (typeof value === 'number') return value;
     return value && typeof value === 'function'
       ? value(context)
-      : compile(directive).apply(context);
+      : compile(key).apply(context);
   },
 };
