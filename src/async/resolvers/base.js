@@ -7,17 +7,18 @@ const compile = (cmd, context) =>
   new Promise((resolve) => {
     const hash = base64(cmd);
     context[hash] = resolve;
-    new Function(`with(this) {
-      try {
-        Promise.resolve(${cmd})
-          .then((result) => {
-            if (typeof result === 'number') return ${hash}(result);
-            ${hash}(result || '');
-          })
-      } catch (e) {
-        ${hash}('')
-      }
-  }`).apply(context);
+    try {
+      new Function(`with(this) {
+      Promise.resolve(${cmd})
+        .then((result) => {
+          if (typeof result === 'number') return ${hash}(result);
+          ${hash}(result || '');
+        })
+        .catch((e) => ${hash}(''))
+    }`).apply(context);
+    } catch (e) {
+      resolve('');
+    }
   });
 
 module.exports = {
