@@ -1,0 +1,14 @@
+Dear {{ user.name }},
+
+We were excited to see you, when you came to visit {{ formatDate( user.lastVisited ) }}.
+
+It is our hope to bring more people out to visit {{ opt:location }}, it 
+would help us greatly if you took two minutes to fill out a quick
+survey. 
+
+Survery:
+{{ survey.map((it, i) => `${i + 1} ${it}`).join('\n') }}
+
+Our warmest thanks,
+
+{{ opt:partner }}

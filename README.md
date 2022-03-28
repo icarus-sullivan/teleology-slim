@@ -20,7 +20,7 @@ Anything within `{{ }}` will be treated as javascript. Whitespace will be ignore
 
 Example:
 ```javascript
-const slim = require('@teleology/slim');
+const { slim } = require('@teleology/slim');
 
 const template = `
     Hey {{ user.name }}, how are you doing?? 
@@ -99,4 +99,39 @@ slim(template, context);
 Output:
 ```bash
 All 3 of them had, 6 tires!
+```
+
+## Experimental 
+
+An experimental async functionality is included in this build. This will allow async functions to be used within the template. 
+
+```javascript
+const { slimAsync } = require('@teleology/slim');
+
+const template = `
+    Hey {{ user.name }}, how are you doing?? 
+    Haven't seen you since the vacation in {{ lastKnownLocation }}.
+`;
+
+const context = {
+  user: {
+    name: 'McTester',
+  },
+  lastKnownLocation: async () =>
+    new Promise((res) => {
+      res('Japan');
+    }),
+};
+
+(async () => {
+  console.log(await slimAsync(template, context));
+})();
+```
+
+Output:
+```bash
+
+    Hey McTester, how are you doing?? 
+    Haven't seen you since the vacation in Japan.
+
 ```

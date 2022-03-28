@@ -1,6 +1,4 @@
-const resolver = require('./resolver');
-const { env, opt, base } = require('./resolvers');
-
-module.exports = resolver({
-  resolvers: [env, opt, base],
-});
+module.exports = {
+  slim: require('./sync/index'),
+  slimAsync: require('./async/index'),
+};

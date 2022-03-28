@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Async template is created 1`] = `
+"
+hello world
+
+this is a test script for slim"
+`;
