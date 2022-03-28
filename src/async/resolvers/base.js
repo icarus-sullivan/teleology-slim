@@ -8,12 +8,15 @@ const compile = (cmd, context) =>
     const hash = base64(cmd);
     context[hash] = resolve;
     new Function(`with(this) {
-    Promise.resolve(${cmd})
-      .then((result) => {
-        if (typeof result === 'number') return ${hash}(result);
-        ${hash}(result || '');
-      })
-      .catch((e) => ${hash}(''))
+      try {
+        Promise.resolve(${cmd})
+          .then((result) => {
+            if (typeof result === 'number') return ${hash}(result);
+            ${hash}(result || '');
+          })
+      } catch (e) {
+        ${hash}('')
+      }
   }`).apply(context);
   });
 

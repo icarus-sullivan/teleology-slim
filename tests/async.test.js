@@ -16,3 +16,8 @@ test('Async template is created', async () => {
   const result = await slimAsync(template, context);
   expect(result).toMatchSnapshot();
 });
+
+test('Missing value does not cause issues', async () => {
+  const result = await slimAsync(template, {});
+  expect(result).toMatchSnapshot();
+});

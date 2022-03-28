@@ -6,3 +6,10 @@ hello world
 
 this is a test script for slim"
 `;
+
+exports[`Missing value does not cause issues 1`] = `
+"
+hello 
+
+this is a test script for "
+`;
