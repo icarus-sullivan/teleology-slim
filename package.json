@@ -1,6 +1,6 @@
 {
   "name": "@teleology/slim",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A tiny javascript template library",
   "homepage": "https://github.com/teleology-io/teleology-slim#readme",
   "bugs": {
@@ -47,5 +47,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^27.5.1",
     "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3"
   }
 }

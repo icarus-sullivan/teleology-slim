@@ -1,3 +1,5 @@
+const { Buffer } = require('buffer/');
+
 const base64 = (v) => Buffer.from(v).toString('base64').replace(/=/g, '');
 
 /* eslint-disable no-new-func */
