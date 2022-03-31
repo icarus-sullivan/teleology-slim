@@ -1,6 +1,6 @@
 {
   "name": "@teleology/slim",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "description": "A tiny javascript template library",
   "homepage": "https://github.com/teleology-io/teleology-slim#readme",
   "bugs": {
@@ -23,7 +23,7 @@
     "test": "jest",
     "test:cli": "node ./lib/cli.js -f sample/cli.slim -i input.json --partner parent company",
     "sample": "export PARTNER_COMPANY='Fictional Company' && node sample/index.js",
-    "prepare2": "tsc"
+    "prepare": "tsc"
   },
   "keywords": [
     "template",
