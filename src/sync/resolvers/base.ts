@@ -1,5 +1,5 @@
 /* eslint-disable no-new-func */
-const compile = (cmd) =>
+const compile = (cmd: string) =>
   new Function(`with(this) {
   try {
     const result = ${cmd};
@@ -10,9 +10,9 @@ const compile = (cmd) =>
   }
 }`);
 
-module.exports = {
+export default {
   regex: /{{.*?}}/g,
-  resolver: ({ match, context }) => {
+  resolver: ({ match, context }: ResolverArgs) => {
     const key = match.slice(2, -2).trim();
     const value = context[key];
     if (typeof value === 'number') return value;
