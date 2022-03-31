@@ -1,6 +1,6 @@
 {
   "name": "@teleology/slim",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "A tiny javascript template library",
   "homepage": "https://github.com/teleology-io/teleology-slim#readme",
   "bugs": {
